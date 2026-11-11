@@ -1,0 +1,28 @@
+name: Research Pipeline CI
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  validate-and-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository code
+        uses: actions/checkout@v4
+
+      - name: Run Python PHI De-identification & QC Script
+        run: python3 scripts/validate_data.py
+
+      - name: Build & Test Docker Container
+        run: |
+          docker build -t iu-research-validator .
+          docker run --rm iu-research-validator
+
+      - name: Setup & Validate Terraform Infrastructure
+        uses: hashicorp/setup-terraform@v3
+      - run: |
+          cd infrastructure
+          terraform init -backend=false
+          terraform validate
