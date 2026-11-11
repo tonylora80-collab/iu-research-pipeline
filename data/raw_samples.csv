@@ -1,0 +1,5 @@
+sample_id,patient_name,gene_marker,sequencing_score,status
+SMP-001,John Doe,BRCA1,98.5,COMPLETE
+SMP-002,Jane Smith,TP53,42.0,FAILED
+SMP-003,Bob Johnson,EGFR,,PENDING
+SMP-004,Alice Brown,KRAS,95.2,COMPLETE
