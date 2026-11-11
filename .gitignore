@@ -2,3 +2,4 @@
 *.tfstate
 *.tfstate.*
 data/clean_samples.csv
+data/audit.log
