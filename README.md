@@ -28,3 +28,6 @@ cd infrastructure
 terraform init -backend=false
 terraform validate
 ```
+
+---
+**Copyright © 2026 C C Marketing Media Group LLC. All Rights Reserved.**
